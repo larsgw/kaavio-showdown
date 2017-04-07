@@ -6,17 +6,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
+import * as Showdown from 'showdown';
+import { ManipulationAPIExtensions } from './extensions';
 
-class Greeting {
-
-  constructor(name) {
-    this.name = name || 'Guest';
-  }
-
-  hello() {
-    return `Welcome, ${this.name}!`;
-  }
-
-}
-
-export default Greeting;
+export const CustomMarkdown = Showdown.extensions('Kaavio', ManipulationAPIExtensions);
