@@ -1,0 +1,43 @@
+<h1>
+  Test Kaavio Markdown
+</h1>
+<h2>Test zoomOn</h2>
+<p>This is a Kaavio diagram. I would like to <a onclick="diagram.manipulator.zoomOn('node1')">zoom on node1</a> and also
+  <a onclick="diagram.manipulator.zoomOn(['node1','node2','node3'])">zoom on nodes 1,2 and three</a></p>.
+<h2>Test panOn</h2>
+<p>I will pan on nodes <a onclick="diagram.manipulator.panTo(['node1','node2','node3'])">these nodes</a>.
+  I also pan to just <a onclick="diagram.manipulator.panTo('node2')">node 2</a>.
+<h2>Test toggleHighlight</h2>
+<ul>
+  <li>Toggle highlight of <a onclick="diagram.manipulator.toggleHighlight('node1', 'red')">node1</a> red.</li>
+  <li>Toggle highlight of <a onclick="diagram.manipulator.toggleHighlight(['node1','node2','node3'], '#fbaec'">three nodes</a> #fbaec. </li>
+</ul>
+<h2>Test highlightOn</h2>
+<ul>
+  <li>Highlight <a onclick="diagram.manipulator.highlightOn('node1', 'red')">node1</a> red.</li>
+  <li>Highlight <a onclick="diagram.manipulator.highlightOn(['node1', 'node2', 'node3'], '#fbaec')">three nodes</a> #fbaec. </li>
+</ul>
+<h2>Test highlightOff</h2>
+<ul>
+  <li>Highlight <a onclick="diagram.manipulator.highlightOff('node1')">node1</a>.</li>
+  <li>Highlight <a onclick="diagram.manipulator.highlightOff(['node1', 'node2', 'node3'])">three nodes</a>.</li>
+</ul>
+<h2>Test toggleHidden</h2>
+<ul>
+  <li>Toggle hidden of <a onclick="diagram.manipulator.toggleHidden('node1')">node1</a>.</li>
+  <li>Toggle hidden of <a onclick="diagram.manipulator.toggleHidden(['node1', 'node2', 'node3'])">three nodes</a>.</li>
+</ul>
+<h2>Test hide</h2>
+<ul>
+  <li>Hide <a onclick="diagram.manipulator.hide('node1')">node1</a>.</li>
+  <li>Hide <a onclick="diagram.manipulator.hide(['node1', 'node2', 'node3'])">three nodes</a>.</li>
+</ul>
+<h2>Test show</h2>
+<ul>
+  <li>Show <a onclick="diagram.manipulator.show('node1')">node1</a>.</li>
+  <li>Show <a onclick="diagram.manipulator.show(['node1', 'node2', 'node3'])">three nodes</a>.</li>
+</ul>
+<a onclick="diagram.manipulator.resetHighlight()"><h2>Reset all highlights</h2></a>
+<a onclick="diagram.manipulator.resetZoom()"><h2>Reset the zoom</h2></a>
+<a onclick="diagram.manipulator.resetPan()"><h2>Reset the pan</h2></a>
+<a onclick="diagram.manipulator.resetHidden()"><h2>Reset hidden</h2></a>
