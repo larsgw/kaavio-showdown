@@ -7,4 +7,4 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-export CustomMarkdown from './CustomMarkdown';
+export getShowdown from './CustomShowdown';
