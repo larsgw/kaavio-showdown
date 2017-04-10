@@ -11,11 +11,6 @@
     "markdown",
     "showdown"
   ],
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE.txt"
-  ],
   "main": "dist/index.js",
   "jsnext:main": "dist/index.es6.js",
   "module": "index.es6.js",
