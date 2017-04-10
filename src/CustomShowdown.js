@@ -7,14 +7,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 import * as Showdown from 'showdown';
-import { zoomOn } from './extensions/zoomOn';
+import * as Extensions from './extensions';
 
 const window = {};
 
 // Register all the extensions to this factory function
-const extensions = () => [
-  zoomOn,
-];
+const extensions = () => Object.keys(Extensions).map(key => Extensions[key]);
 
 /**
  * Factory function that returns Showdown with the registered extension(s).
@@ -23,6 +21,8 @@ const extensions = () => [
  * @returns {*}
  */
 export const getShowdown = (KaavioInstance) => {
+  console.log(extensions());
   window.diagram = KaavioInstance;
-  return Showdown.extension('kaavio', extensions);
+  Showdown.extension('kaavio', extensions);
+  return Showdown;
 };
