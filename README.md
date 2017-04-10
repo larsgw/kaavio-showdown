@@ -11,7 +11,7 @@
 ### How to Install
 
 ```sh
-$ npm install kaavio-showdown
+$ npm install --save @wikipathways/kaavio-showdown
 ```
 
 ### Getting Started
@@ -22,7 +22,7 @@ This package provides some special Markdown syntax for interacting with Kaavio d
 Make sure you have Kaavio installed.
 
 ```javascript
-import {getShowdown} from 'kaavio-showdown';
+import {getShowdown} from '@wikipathways/kaavio-showdown';
 
 const kaavioInstance = YOUR_DIAGRAM_INSTANCE;
 const showdown = getShowdown(kaavioInstance);
@@ -71,6 +71,15 @@ $ npm test              # Run unit tests with Mocha
 $ npm run test:watch    # Run unit tests with Mocha, and watch files for changes
 $ npm run test:cover    # Run unit tests with code coverage by Istanbul
 ```
+
+### Publishing
+- Make sure you're a member of the @wikipathways organization and have publishing rights
+- `npm version <type>`
+- `npm run build`
+- `cd dist`
+- `npm publish`
+- `cd ../`
+
 
 ### License
 
