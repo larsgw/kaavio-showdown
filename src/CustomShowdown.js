@@ -7,7 +7,7 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 import * as Showdown from 'showdown';
-import * as Extensions from './extensions';
+import * as Extensions from './extensions/index';
 
 const window = {};
 

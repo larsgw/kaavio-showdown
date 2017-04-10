@@ -1,9 +1,8 @@
 {
-  "private": true,
-  "name": "kaavio-showdown",
+  "name": "@wikipathways/kaavio-showdown",
   "version": "0.0.0",
   "description": "Extended MarkDown syntax for Kaavio and the Manipulation API",
-  "repository": "@wikipathways/kaavio-markdown",
+  "repository": "jacobwindsorn/kaavio-markdown",
   "author": "Jacob Windsor",
   "license": "MIT",
   "keywords": [],

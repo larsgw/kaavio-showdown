@@ -1,10 +1,10 @@
 # [kaavio-showdown](https://github.com/jacobwindsor/kaavio-markdown)
 
-[![NPM version](http://img.shields.io/npm/v/kaavio-markdown.svg?style=flat-square)](https://www.npmjs.com/package/kaavio-showdown)
-[![NPM downloads](http://img.shields.io/npm/dm/kaavio-markdown.svg?style=flat-square)](https://www.npmjs.com/package/kaavio-showdown)
-[![Build Status](http://img.shields.io/travis/jacobwindsor/kaavio-markdown/master.svg?style=flat-square)](https://travis-ci.org/jacobwindsor/kaavio-showdown)
-[![Coverage Status](https://img.shields.io/coveralls/jacobwindsor/kaavio-markdown.svg?style=flat-square)](https://coveralls.io/jacobwindsor/kaavio-showdown)
-[![Dependency Status](http://img.shields.io/david/jacobwindsor/kaavio-markdown.svg?style=flat-square)](https://david-dm.org/jacobwindsor/kaavio-showdown)
+[![NPM version](https://img.shields.io/npm/v/@wikipathways/kaavio-showdown.svg?style=flat-square)](https://www.npmjs.com/package/kaavio-showdown)
+[![NPM downloads](http://img.shields.io/npm/dm/@wikipathways/kaavio-showdown.svg?style=flat-square)](https://www.npmjs.com/package/kaavio-showdown)
+[![Build Status](http://img.shields.io/travis/jacobwindsor/kaavio-showdown/master.svg?style=flat-square)](https://travis-ci.org/jacobwindsor/kaavio-showdown)
+[![Coverage Status](https://img.shields.io/coveralls/jacobwindsor/kaavio-showdown.svg?style=flat-square)](https://coveralls.io/jacobwindsor/kaavio-showdown)
+[![Dependency Status](http://img.shields.io/david/jacobwindsor/kaavio-showdown.svg?style=flat-square)](https://david-dm.org/jacobwindsor/kaavio-showdown)
 
 > Extended MardDown syntax for Kaavio and the Manipulation API
 
