@@ -6,3 +6,4 @@ export { toggleHighlight } from './toggleHighlight';
 export { resetHighlight } from './resetHighlight';
 export { panTo } from './panTo';
 export { resetPan } from './resetPan';
+export { toggleHidden } from './toggleHidden';
