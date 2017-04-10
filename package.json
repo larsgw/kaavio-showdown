@@ -6,8 +6,13 @@
   "author": "Jacob Windsor",
   "license": "MIT",
   "keywords": ["Kaavio", "diagram", "markdown", "showdown"],
-  "main": "index.js",
-  "jsnext:main": "index.es6.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "main": "dist/index.js",
+  "jsnext:main": "dist/index.es6.js",
   "module": "index.es6.js",
   "babel": {
     "presets": [
