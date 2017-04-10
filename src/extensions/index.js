@@ -9,3 +9,4 @@ export { resetPan } from './resetPan';
 export { hide } from './hide';
 export { show } from './show';
 export { toggleHidden } from './toggleHidden';
+export { resetHidden } from './resetHidden';
