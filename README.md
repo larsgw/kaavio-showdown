@@ -26,7 +26,7 @@ import {getShowdown} from '@wikipathways/kaavio-showdown';
 
 const kaavioInstance = YOUR_DIAGRAM_INSTANCE;
 const showdown = getShowdown(kaavioInstance);
-const converter = getShowdown({
+const converter = new showdown.Converter({
   extensions: ['kaavio'] // You may also use other extensions here
 });
 
