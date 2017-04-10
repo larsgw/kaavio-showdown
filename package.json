@@ -1,11 +1,16 @@
 {
   "name": "@wikipathways/kaavio-showdown",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Extended MarkDown syntax for Kaavio and the Manipulation API",
   "repository": "jacobwindsor/kaavio-showdown",
   "author": "Jacob Windsor",
   "license": "MIT",
-  "keywords": ["Kaavio", "diagram", "markdown", "showdown"],
+  "keywords": [
+    "Kaavio",
+    "diagram",
+    "markdown",
+    "showdown"
+  ],
   "files": [
     "dist",
     "README.md",
