@@ -1,4 +1,4 @@
-import { manipulatorExtension } from './manipulatorExtension';
+import { manipulatorExtensionGenerator } from './manipulatonExtensionGenerator';
 import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString';
 
-export const zoomOn = manipulatorExtension('zoomOn', [parseCommaDelimitedString]);
+export const zoomOn = manipulatorExtensionGenerator('zoomOn', [parseCommaDelimitedString]);

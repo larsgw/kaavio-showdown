@@ -46,7 +46,7 @@ const getOnClickParams = (paramValues, paramFunctions) => {
  * [text]!!zoomOn 'param1' 'param2'!!
  * @returns {{type: string, filter: (function(*): (*|XML|void|string))}}
  */
-export const manipulatorExtension = (manipulationName, paramFunctions) => {
+export const manipulatorExtensionGenerator = (manipulationName, paramFunctions) => {
   const paramNumber = paramFunctions ? paramFunctions.length : 0;
   const regex = getRegex(manipulationName, paramNumber);
   return {

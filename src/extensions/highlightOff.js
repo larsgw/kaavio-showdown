@@ -1,7 +1,7 @@
-import { manipulatorExtension } from './manipulatorExtension';
+import { manipulatorExtensionGenerator } from './manipulatonExtensionGenerator';
 import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString';
 
-export const highlightOff = manipulatorExtension(
+export const highlightOff = manipulatorExtensionGenerator(
   'highlightOff',
   [parseCommaDelimitedString]
 );

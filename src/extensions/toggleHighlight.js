@@ -1,8 +1,8 @@
 import { manipulatorExtensionGenerator } from './manipulatonExtensionGenerator';
 import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString';
 
-export const highlightOn = manipulatorExtensionGenerator(
-  'highlightOn',
+export const toggleHighlight = manipulatorExtensionGenerator(
+  'toggleHighlight',
   [parseCommaDelimitedString, (input) => `'${input}'`]
 );
 

@@ -1,5 +1,5 @@
 /**
- * Parse a comma delimited string into an array of strings
+ * Parse a comma delimited string into a string with array syntax
  * @param commaDelimited
  * @returns {*}
  */
