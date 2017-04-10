@@ -1,7 +1,7 @@
 # [kaavio-showdown](https://github.com/jacobwindsor/kaavio-markdown)
 
 [![NPM version](https://img.shields.io/npm/v/@wikipathways/kaavio-showdown.svg?style=flat-square)](https://www.npmjs.com/package/@wikipathways/kaavio-showdown)
-[![NPM downloads](http://img.shields.io/npm/dm/@wikipathways/kaavio-showdown.svg?style=flat-square)](https://www.npmjs.com/package/@wikipathways/kaavio-showdownn)
+[![NPM downloads](http://img.shields.io/npm/dm/@wikipathways/kaavio-showdown.svg?style=flat-square)](https://www.npmjs.com/package/@wikipathways/kaavio-showdown)
 [![Build Status](http://img.shields.io/travis/jacobwindsor/kaavio-showdown/master.svg?style=flat-square)](https://travis-ci.org/jacobwindsor/kaavio-showdown)
 [![Coverage Status](https://img.shields.io/coveralls/jacobwindsor/kaavio-showdown.svg?style=flat-square)](https://coveralls.io/jacobwindsor/kaavio-showdown)
 [![Dependency Status](http://img.shields.io/david/jacobwindsor/kaavio-showdown.svg?style=flat-square)](https://david-dm.org/jacobwindsor/kaavio-showdown)
