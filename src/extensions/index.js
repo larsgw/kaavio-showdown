@@ -5,3 +5,4 @@ export { highlightOff } from './highlightOff';
 export { toggleHighlight } from './toggleHighlight';
 export { resetHighlight } from './resetHighlight';
 export { panTo } from './panTo';
+export { resetPan } from './resetPan';
