@@ -7,9 +7,15 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 import * as Showdown from 'showdown';
-import { ManipulationAPIExtensions } from './extensions';
+import { zoomOn } from './extensions/zoomOn';
 
 const window = {};
+
+// Register all the extensions to this factory function
+const extensions = () => [
+  zoomOn,
+];
+
 /**
  * Factory function that returns Showdown with the registered extension(s).
  * Also add the specified KaavioInstance to the window as window.diagram.
@@ -18,6 +24,5 @@ const window = {};
  */
 export const getShowdown = (KaavioInstance) => {
   window.diagram = KaavioInstance;
-  Showdown.extension('Kaavio', ManipulationAPIExtensions);
-  return Showdown;
+  return Showdown.extension('kaavio', extensions);
 };
