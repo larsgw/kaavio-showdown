@@ -1,4 +1,5 @@
-import { manipulatorExtensionGenerator, getRegex } from '../src/extensions/manipulatonExtensionGenerator';
+import { manipulatorExtensionGenerator, getRegex } from
+  '../src/extensions/manipulatonExtensionGenerator';
 import * as assert from 'assert';
 import * as Showdown from 'showdown';
 import { normalize } from '../utils/normalize';

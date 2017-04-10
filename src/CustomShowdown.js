@@ -21,7 +21,6 @@ const extensions = () => Object.keys(Extensions).map(key => Extensions[key]);
  * @returns {*}
  */
 export const getShowdown = (KaavioInstance) => {
-  console.log(extensions());
   window.diagram = KaavioInstance;
   Showdown.extension('kaavio', extensions);
   return Showdown;

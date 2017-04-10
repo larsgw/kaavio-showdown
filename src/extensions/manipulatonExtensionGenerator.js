@@ -5,7 +5,8 @@ import { normalize } from '../../utils/normalize';
  * Finds e.g.: [some text]!!manipulationName 'param1' 'param2' 'param3'...!!
  * Note: Just export this for unit testing
  * @param manipulationName
- * @param paramNumber - The number of params in the regex query. So in the example the number of 'param[n]'s
+ * @param paramNumber - The number of params in the regex query.
+ * So in the example the number of 'param[n]'s
  * @returns {RegExp}
  */
 export const getRegex = (manipulationName, paramNumber) => {
