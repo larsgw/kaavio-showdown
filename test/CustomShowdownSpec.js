@@ -36,9 +36,8 @@ describe('CustomMarkdown', () => {
       });
 
     cases.forEach(singleCase => {
-      it(`should map to an extension file for ${singleCase.name}`, () => {
-        return extensions.should.have.ownProperty(singleCase.name);
-      });
+      it(`should map to an extension file for ${singleCase.name}`, () =>
+        extensions.should.have.ownProperty(singleCase.name));
 
       it(`should convert correctly for the ${singleCase.name} extension`, () => {
         const extensionFactory = () => [extensions[singleCase.name]];
