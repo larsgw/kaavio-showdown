@@ -9,8 +9,6 @@
 import * as Showdown from 'showdown';
 import * as Extensions from './extensions/index';
 
-const window = {};
-
 // Register all the extensions to this factory function
 const extensions = () => Object.keys(Extensions).map(key => Extensions[key]);
 
@@ -21,7 +19,9 @@ const extensions = () => Object.keys(Extensions).map(key => Extensions[key]);
  * @returns {*}
  */
 export const getShowdown = (KaavioInstance) => {
-  window.diagram = KaavioInstance;
+  if (typeof(window) !== 'undefined') {
+    window.diagram = KaavioInstance;
+  }
   Showdown.extension('kaavio', extensions);
   return Showdown;
 };

@@ -52,7 +52,7 @@ export const manipulatorExtensionGenerator = (manipulationName, paramFunctions) 
   const regex = getRegex(manipulationName, paramNumber);
   return {
     type: 'lang',
-    filter: (text) =>
+    filter: text =>
       text.replace(regex,
         (match, innerText, ...p) => {
           p.pop(); // Remove offset
