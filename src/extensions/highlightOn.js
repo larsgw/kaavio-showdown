@@ -1,11 +1,11 @@
-const regex = /\[((?:\[[^\]]*|[^\[\]])*)\]!![ \t]*zoomOn ([a-zA-Z0-9_,]+?(?:\(.*?\).*?)?)[ \t]*?!!/gu;
+const regex = /\[((?:\[[^\]]*|[^\[\]])*)\]!![ \t]*highlightOn ([a-zA-Z0-9_,]+?(?:\(.*?\).*?)?) '([a-zA-Z0-9#]+?(?:\(.*?\).*?)?)'[ \t]*?!!/gu;
 
-export const zoomOn = {
-  // [some text]!!zoomOn node1,node2,node3,...!!
+export const highlightOn = {
+  // [some text]!!highlightOn node1,node2,node3,... 'color'!!
   type: 'lang',
   filter: (text) =>
     text.replace(regex,
-      (match, innerText, nodeString) => {
+      (match, innerText, nodeString, color) => {
         const nodesSplit = nodeString.split(/\s*,\s*/);
         let nodes;
         if (nodesSplit.length < 2) {
@@ -20,7 +20,7 @@ export const zoomOn = {
           nodes += ']';
         }
         return (
-          `<a onclick="diagram.manipulator.zoomOn(${nodes})">${innerText}</a>`
+          `<a onclick="diagram.manipulator.highlightOn(${nodes},'${color}')">${innerText}</a>`
         );
       }),
 };
