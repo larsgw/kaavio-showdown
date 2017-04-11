@@ -52,7 +52,7 @@ any hidden elements first.
 ```
 All parameters the same as toggleHighlight.
 
-### highlightOn
+### highlightOff
 ```markdown
 [some text]!!highlightOff 'entity list' 'resets'!!
 ```
@@ -92,7 +92,7 @@ All parameters are the same as hide.
 
 ### zoomOn
 ```markdown
-[some text]!!zoomOn 'entity list' 'resets'
+[some text]!!zoomOn 'entity list' 'resets'!!
 ```
 
 - `entity list` is a comma separated list of entity IDs.
@@ -100,7 +100,19 @@ All parameters are the same as hide.
   - `hidden` will show all hidden entities
   - `highlighted` will un-highlight all highlighted entities.
   
+### panTo
+```markdown
+[some text]!!panTo 'entity list' 'resets'!!
+```
+
+- `entity list` is a comma separated list of entity IDs.
+- `resets` is a comma separated list of what should be reset *before* highlighting. You can use the following:
+  - `hidden` will show all hidden entities
+  - `highlighted` will un-highlight all highlighted entities.
+  - `panZoom` will reset the pan and zoom.
+
 ### resetPanZoom
+This will reset the zoom to the original zoom level and center the diagram.
 ```markdown
 [some text]!!resetPanZoom!!
 ```
