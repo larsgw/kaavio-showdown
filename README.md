@@ -40,7 +40,7 @@ Only one exported extension function per file.
 
 Use the `manipulationExtension` (in `generators`) to help you make extensions.
 It returns the [extension object](https://github.com/showdownjs/showdown/wiki/Extensions#creating-showdown-extensions) 
-using a RegEx pattern that matches the other extensions. It takes an extension name and an array of functions that 
+using a RegEx pattern that matches the other extensions. It takes an extension name and an array objects with (optional) functions that 
 should be called on each parameter.
 
 The below example will enable syntax like `[some text]!!yourExtensionName 'input'`. This will convert to 
@@ -52,11 +52,14 @@ import {manipulationExtensionGenerator} from './manipulationExtensionGenerator';
 export const yourExtensionName = manipulationExtensionGenerator(
     'yourExtensionName',
     [
-        (input) => `'${input}'`
+        {
+            function:(input) => `'${input}'`,
+            optional: false, // You must set this to true or false. 
+        }
     ]
 )
 ```
-
+**Note**: Optional functions must appearin the array after all the required ones.
 
 ### How to Test
 To test your extensions simply create a sample MarkDown file in `test/extensions` and a corresponding HTML file that is 
