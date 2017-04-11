@@ -32,11 +32,13 @@ const getOnClickParams = (paramValues, paramFunctions) => {
   if (paramValues.length === 1 || paramFunctions.length === 1) {
     return paramFunctions[0].function(paramValues[0]);
   }
-  return paramValues.reduce((acc, val, index, arr) => {
-    let toReturn = `${acc}${paramFunctions[index].function(val)}`;
-    if (index !== arr.length - 1) toReturn = toReturn.concat(',');
-    return toReturn;
-  }, '');
+  return paramValues
+    .filter(val => val) // Filter out any that have no value. Happens for optional groups
+    .reduce((acc, val, index, arr) => {
+      let toReturn = `${acc}${paramFunctions[index].function(val)}`;
+      if (index !== arr.length - 1) toReturn = toReturn.concat(',');
+      return toReturn;
+    }, '');
 };
 
 /**

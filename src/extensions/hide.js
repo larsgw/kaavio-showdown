@@ -1,11 +1,11 @@
 import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
-import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString';
+import { commaDelimitedStringToArrayLikeString } from '../../utils/parseCommaDelimitedString';
 
 export const hide = manipulatorExtensionGenerator(
   'hide',
   [
     {
-      function: parseCommaDelimitedString,
+      function: commaDelimitedStringToArrayLikeString,
       optional: false,
     },
   ]

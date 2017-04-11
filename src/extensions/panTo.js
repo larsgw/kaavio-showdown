@@ -1,11 +1,11 @@
 import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
-import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString';
+import { commaDelimitedStringToArrayLikeString } from '../../utils/parseCommaDelimitedString';
 
 export const panTo = manipulatorExtensionGenerator(
   'panTo',
   [
     {
-      function: parseCommaDelimitedString,
+      function: commaDelimitedStringToArrayLikeString,
       optional: false
     },
   ]

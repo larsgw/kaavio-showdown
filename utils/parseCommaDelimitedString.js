@@ -1,16 +1,13 @@
-/**
- * Parse a comma delimited string into a string with array syntax
- * @param commaDelimited
- * @returns {*}
- */
-export const parseCommaDelimitedString = (commaDelimited) => {
-  const split = commaDelimited.split(/\s*,\s*/);
+export const arrayToArrayLikeString = (arr) => {
   let entries;
-  if (split.length < 2) {
-    entries = `'${split}'`;
+  if (arr.length < 1) {
+    throw new Error('Invalid length');
+  }
+  if (arr.length === 1) {
+    entries = `'${arr[0]}'`;
   } else {
     entries = '[';
-    split.forEach((singleEntry, index, array) => {
+    arr.forEach((singleEntry, index, array) => {
       entries += `'${singleEntry}'`;
       // Add comma separator if not last index
       if (index !== array.length - 1) entries += ',';
@@ -19,3 +16,10 @@ export const parseCommaDelimitedString = (commaDelimited) => {
   }
   return entries;
 };
+
+export const commaDelimitedStringToArray = (commaDelimited) => {
+  return commaDelimited.split(/\s*,\s*/);
+};
+
+export const commaDelimitedStringToArrayLikeString = (commaDelimited) =>
+  arrayToArrayLikeString(commaDelimitedStringToArray(commaDelimited));
