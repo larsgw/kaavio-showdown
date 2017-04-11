@@ -1,1 +1,0 @@
-[Reset pan]!!resetPan!!

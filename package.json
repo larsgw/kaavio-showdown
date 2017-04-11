@@ -44,6 +44,7 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "del": "^2.2.0",
+    "easystatic": "^0.1.12",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^8.0.0",
     "eslint-plugin-import": "^1.6.1",

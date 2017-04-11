@@ -1,3 +1,3 @@
 import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
 
-export const resetZoom = manipulatorExtensionGenerator('resetZoom');
+export const resetPanZoom = manipulatorExtensionGenerator('resetPanZoom');
