@@ -23,6 +23,9 @@ export const panTo = manipulatorExtensionGenerator(
         if (arr.indexOf('hidden') > -1) {
           toReturn.hidden = true;
         }
+        if (arr.indexOf('panZoom') > -1) {
+          toReturn.panZoom = true;
+        }
         return generateObjectString(toReturn);
       },
       optional: true,

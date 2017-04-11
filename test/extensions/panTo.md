@@ -8,4 +8,6 @@
 
 [reset hidden]!!panTo 'node1' 'hidden'!!
 
-[reset both]!!panTo 'node1' 'hidden,highlighted'!!
+[reset panZoom]!!panTo 'node1' 'panZoom'!!
+
+[reset all three]!!panTo 'node1' 'hidden,highlighted,panZoom'!!
