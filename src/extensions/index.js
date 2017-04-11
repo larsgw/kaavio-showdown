@@ -3,7 +3,7 @@ export { resetZoom } from './resetZoom';
 export { highlightOn } from './highlightOn';
 export { highlightOff } from './highlightOff';
 export { toggleHighlight } from './toggleHighlight';
-export { resetHighlight } from './resetHighlight';
+export { resetHighlighted } from './resetHighlighted';
 export { panTo } from './panTo';
 export { resetPan } from './resetPan';
 export { hide } from './hide';

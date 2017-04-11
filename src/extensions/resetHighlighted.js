@@ -2,6 +2,6 @@ import { manipulatorExtensionGenerator } from '../generators/manipulationExtensi
 
 /**
  * Enables syntax like:
- * [some text]!!resetHighlight!!
+ * [some text]!!resetHighlighted!!
  */
-export const resetHighlight = manipulatorExtensionGenerator('resetHighlight');
+export const resetHighlighted = manipulatorExtensionGenerator('resetHighlighted');
