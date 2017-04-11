@@ -13,7 +13,7 @@ but it will be extracted into it's own generic library soon.
 
 ## Getting started
 ### For writers
-If you're not a developer and are just looking for how to write interactive descriptions, then go to the guide [here](/writers).
+If you're not a developer and are just looking for how to write interactive descriptions, then go to the guide [here](writers).
 
 ### For developers
-For how-tos on extending and integrating Kaavio Showdown then go to [the developers page](/developers).
+For how-tos on extending and integrating Kaavio Showdown then go to [the developers page](developers).

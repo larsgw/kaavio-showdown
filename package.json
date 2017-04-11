@@ -65,7 +65,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "node tools/build",
     "prepublish": "npm run build",
-    "publish:docs": "easystatic deploy docs --repo jacobwindsor/kaavio-markdown",
+    "publish:docs": "easystatic deploy docs --repo jacobwindsor/kaavio-showdown",
     "start": "easystatic start docs"
   }
 }
