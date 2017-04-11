@@ -1,3 +1,3 @@
-import { manipulatorExtensionGenerator } from './manipulatonExtensionGenerator';
+import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
 
 export const resetHidden = manipulatorExtensionGenerator('resetHidden');

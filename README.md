@@ -38,7 +38,7 @@ const HTML = converter.makeHtml();
 Add new extensions to `src/extensions`; All files should be named the same as the function they export. 
 Only one exported extension function per file.
 
-Use the `manipulationExtensionGenerator` to help you make extensions.
+Use the `manipulationExtension` (in `generators`) to help you make extensions.
 It returns the [extension object](https://github.com/showdownjs/showdown/wiki/Extensions#creating-showdown-extensions) 
 using a RegEx pattern that matches the other extensions. It takes an extension name and an array of functions that 
 should be called on each parameter.
