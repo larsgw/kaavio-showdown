@@ -8,6 +8,8 @@
 
 > Extended MardDown syntax for Kaavio and the Manipulation API
 
+Full docs are available [here](https://jacobwindsor.github.io/kaavio-showdown/).
+
 ### How to Install
 
 ```sh
