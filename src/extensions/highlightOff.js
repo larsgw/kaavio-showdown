@@ -5,6 +5,12 @@ import {
 } from '../../utils/parseCommaDelimitedString';
 import { generateObjectString } from '../../utils/generateObjectString';
 
+/**
+ * Enables syntax like:
+ * [some text]!!highlightOff 'entity list' 'reset list'!!
+ * Where entity list is a comma-separated list of entity IDs.
+ * Reset list is optional and can include others, hidden, and panZoom.
+ */
 export const highlightOff = manipulatorExtensionGenerator(
   'highlightOff',
   [

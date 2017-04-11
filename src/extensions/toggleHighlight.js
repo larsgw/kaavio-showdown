@@ -1,14 +1,14 @@
+import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
+import { commaDelimitedStringToArrayLikeString, commaDelimitedStringToArray }
+from '../../utils/parseCommaDelimitedString';
+import { generateObjectString } from '../../utils/generateObjectString';
+
 /**
  * Enables syntax like:
  * [some text]!!toggleHighlight 'entity list' 'somecolor' 'reset list'!!
  * Where entity list is a comma-separated list of entity IDs.
  * Reset list is optional and can include others, hidden, and panZoom.
  */
-import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
-import { commaDelimitedStringToArrayLikeString, commaDelimitedStringToArray }
-from '../../utils/parseCommaDelimitedString';
-import { generateObjectString } from '../../utils/generateObjectString';
-
 export const toggleHighlight = manipulatorExtensionGenerator(
   'toggleHighlight',
   [
