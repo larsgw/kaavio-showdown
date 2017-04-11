@@ -11,11 +11,29 @@ describe('manipulatorExtensionGenerator', () => {
 
     assert.equal(regex.source, shouldBe);
   });
-  it('should have a RegEx string with two extra params', () => {
+  it('should have a RegEx string with two extra required params', () => {
     const regex = getRegex('test', 2);
     const shouldBe = '\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]!![ \\t]*test' +
       '[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\'' +
       '[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\'' +
+      '[ \\t]*?!!';
+
+    assert.equal(regex.source, shouldBe);
+  });
+  it('should have a RegEx string with one required param and one optional param', () => {
+    const regex = getRegex('test', 1, 1);
+    const shouldBe = '\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]!![ \\t]*test' +
+      '[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\'' +
+      '(?:[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\')?' +
+      '[ \\t]*?!!';
+
+    assert.equal(regex.source, shouldBe);
+  });
+  it('should have a RegEx string with only two optional params', () => {
+    const regex = getRegex('test', 0, 2);
+    const shouldBe = '\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]!![ \\t]*test' +
+      '(?:[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\')?' +
+      '(?:[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\')?' +
       '[ \\t]*?!!';
 
     assert.equal(regex.source, shouldBe);

@@ -3,6 +3,11 @@ import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString
 
 export const toggleHidden = manipulatorExtensionGenerator(
   'toggleHidden',
-  [parseCommaDelimitedString]
+  [
+    {
+      function: parseCommaDelimitedString,
+      optional: false,
+    },
+  ]
 );
 

@@ -3,6 +3,15 @@ import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString
 
 export const toggleHighlight = manipulatorExtensionGenerator(
   'toggleHighlight',
-  [parseCommaDelimitedString, (input) => `'${input}'`]
+  [
+    {
+      function: parseCommaDelimitedString,
+      optional: false,
+    },
+    {
+      function: (input) => `'${input}'`,
+      optional: false,
+    },
+  ]
 );
 

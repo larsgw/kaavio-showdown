@@ -1,28 +1,28 @@
 import { normalize } from '../../utils/normalize';
 
 /**
- * Buld up the Regex string, enabling multiple parameters
- * Finds e.g.: [some text]!!manipulationName 'param1' 'param2' 'param3'...!!
+ * Build up the Regex string, enabling multiple (optional) parameters
+ * Finds e.g.: [some text]!!manipulationName 'param1' 'param2' 'optionalParam1'...!!
  * Note: Just export this for unit testing
  * @param manipulationName
- * @param paramNumber - The number of params in the regex query.
- * So in the example the number of 'param[n]'s
+ * @param requiredNumber {{number}} - The number of required params in the regex query.
+ * @param optionalNumber {{number}} - The number of optional params.
  * @returns {RegExp}
  */
-export const getRegex = (manipulationName, paramNumber) => {
-  const paramRegex = '[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\''.repeat(paramNumber);
+export const getRegex = (manipulationName, requiredNumber, optionalNumber) => {
+  const requiredParamRegex = '[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\''
+    .repeat(requiredNumber);
+  const optionalParamRegex = '(?:[ \\t]*?\'(.+?(?:\\(.*?\\).*?)?)\')?'.repeat(optionalNumber);
   const regexString = normalize(`\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]!![ \\t]*${manipulationName}
-    ${paramRegex}
+    ${requiredParamRegex}${optionalParamRegex}
     [ \\t]*?!!`);
   return new RegExp(regexString, 'g');
 };
 
 /**
  * Get the params required in the onclick event of the output HTML anchor.
- * Each function will be carried out in order. So the 0th function will be called
- * for the 0th value.
  * @param paramValues - Array of values to carry out each function on
- * @param paramFunctions - Array of functions to carry out on each param value.
+ * @param paramFunctions {{function: (function(string): string), optional: boolean}}
  * @returns {*}
  */
 const getOnClickParams = (paramValues, paramFunctions) => {
@@ -30,26 +30,43 @@ const getOnClickParams = (paramValues, paramFunctions) => {
   if (paramValues.length < 1 || paramFunctions.length < 1) return '';
   // No need to loop through when only one
   if (paramValues.length === 1 || paramFunctions.length === 1) {
-    return paramFunctions[0](paramValues[0]);
+    return paramFunctions[0].function(paramValues[0]);
   }
   return paramValues.reduce((acc, val, index, arr) => {
-    let toReturn = `${acc}${paramFunctions[index](val)}`;
+    let toReturn = `${acc}${paramFunctions[index].function(val)}`;
     if (index !== arr.length - 1) toReturn = toReturn.concat(',');
     return toReturn;
   }, '');
 };
 
 /**
+ * Checks that there are not required functions after the optional functions.
+ * @param paramFunctions {{function: (function(string): string), optional: boolean}}
+ * @returns {*|boolean}
+ */
+const checkOptionalAtEnd = (paramFunctions) => {
+  return paramFunctions.every((val, index, arr) => {
+    if (index === 0) return true;
+    const prev = arr[index - 1];
+    return !(prev.optional && !val.optional);
+  });
+};
+
+/**
  * @param manipulationName name of the manipulation API method to perform. E.g. highlightOn
- * @param paramFunctions - Array of functions to carry out on each param value.
+ * @param paramFunctions {{function: (function(string): string), optional: boolean}}
  * Each function will be carried out in order. So the 0th function will be called
  * for 'param1' and the 1st for 'param2' in the markdown
  * [text]!!zoomOn 'param1' 'param2'!!
  * @returns {{type: string, filter: (function(*): (*|XML|void|string))}}
  */
-export const manipulatorExtensionGenerator = (manipulationName, paramFunctions) => {
-  const paramNumber = paramFunctions ? paramFunctions.length : 0;
-  const regex = getRegex(manipulationName, paramNumber);
+export const manipulatorExtensionGenerator = (manipulationName, paramFunctions = []) => {
+  if (! checkOptionalAtEnd(paramFunctions)) {
+    throw new Error('Optional functions must be after the required ones.');
+  }
+  const requiredNumber = paramFunctions.filter(param => ! param.optional).length;
+  const optionalNumber = paramFunctions.filter(param => param.optional).length;
+  const regex = getRegex(manipulationName, requiredNumber, optionalNumber);
   return {
     type: 'lang',
     filter: text =>

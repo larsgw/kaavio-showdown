@@ -3,5 +3,10 @@ import { parseCommaDelimitedString } from '../../utils/parseCommaDelimitedString
 
 export const highlightOff = manipulatorExtensionGenerator(
   'highlightOff',
-  [parseCommaDelimitedString]
+  [
+    {
+      function: parseCommaDelimitedString,
+      optional: false,
+    },
+  ]
 );
