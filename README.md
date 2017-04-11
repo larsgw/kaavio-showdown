@@ -59,7 +59,7 @@ export const yourExtensionName = manipulationExtensionGenerator(
     ]
 )
 ```
-**Note**: Optional functions must appearin the array after all the required ones.
+**Note**: Optional functions must appear in the array after all the required ones.
 
 ### How to Test
 To test your extensions simply create a sample MarkDown file in `test/extensions` and a corresponding HTML file that is 
