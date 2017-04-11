@@ -1,7 +1,7 @@
 import { manipulatorExtensionGenerator } from '../generators/manipulationExtension';
 import {
   commaDelimitedStringToArray,
-  commaDelimitedStringToArrayLikeString
+  commaDelimitedStringToArrayLikeString,
 } from '../../utils/parseCommaDelimitedString';
 import { generateObjectString } from '../../utils/generateObjectString';
 

@@ -3,7 +3,7 @@ import {
   commaDelimitedStringToArray,
   commaDelimitedStringToArrayLikeString,
 } from '../../utils/parseCommaDelimitedString';
-import {generateObjectString} from '../../utils/generateObjectString';
+import { generateObjectString } from '../../utils/generateObjectString';
 
 export const panTo = manipulatorExtensionGenerator(
   'panTo',

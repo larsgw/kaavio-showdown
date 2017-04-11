@@ -46,13 +46,13 @@ const getOnClickParams = (paramValues, paramFunctions) => {
  * @param paramFunctions {{function: (function(string): string), optional: boolean}}
  * @returns {*|boolean}
  */
-const checkOptionalAtEnd = (paramFunctions) => {
-  return paramFunctions.every((val, index, arr) => {
+const checkOptionalAtEnd = (paramFunctions) =>
+  paramFunctions.every((val, index, arr) => {
     if (index === 0) return true;
     const prev = arr[index - 1];
     return !(prev.optional && !val.optional);
   });
-};
+
 
 /**
  * @param manipulationName name of the manipulation API method to perform. E.g. highlightOn
