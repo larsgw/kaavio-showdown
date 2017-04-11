@@ -4,3 +4,23 @@
 <p>
   <a onclick="diagram.manipulator.highlightOn(['node1','node2'],'#fffff')">highlight nodes 1 and 2 #fffff</a>
 </p>
+<p>
+  <a onclick="diagram.manipulator.highlightOn('node1','red',{others: true})">
+    reset others
+  </a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.highlightOn('node1','red',{hidden: true})">
+    reset hidden
+  </a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.highlightOn('node1','red',{panZoom: true})">
+    reset panZoom
+  </a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.highlightOn('node1','red',{others: true,hidden: true,panZoom: true})">
+    reset all three
+  </a>
+</p>
