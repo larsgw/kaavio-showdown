@@ -10,6 +10,6 @@ describe('CustomMarkdown', () => {
     extensions.should.have.ownProperty('kaavio')
   );
   it('should have the correct number of extensions registered', () => {
-    assert.equal(extensions.kaavio.length, 11);
+    assert.equal(extensions.kaavio.length, 1);
   });
 });
