@@ -80,10 +80,12 @@ export const interactiveDescriptionLinks = {
         .filter(elem => action.match(elem.regex))
         .map(elem => action.match(elem.regex, results => `${elem.name}(${results[1]})`));
 
-      const fullAction = twoGroups.concat(oneGroup).join('.');
+      const fullAction = twoGroups.concat(oneGroup).reduce((acc, cur, i) => {
+        return `${acc}diagram.manipulator.${cur};`;
+      }, '');
 
       // Render the full interactive Kaavio link
       // Reset Kaavio before so each link is "self describing"
-      return `<a onclick="diagram.manipulator.reset().${fullAction}">${innerText}</a>`;
+      return `<a onclick="diagram.manipulator.reset();${fullAction}">${innerText}</a>`;
     }),
 };
