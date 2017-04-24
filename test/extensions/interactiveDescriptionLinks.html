@@ -1,0 +1,48 @@
+<h1 id="singleoperations">Single operations</h1>
+<p>
+  <a onclick="diagram.manipulator.reset().zoomOn('node1')">zoom on one node</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().zoomOn(['node1','node2'])">zoom on two nodes</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().highlightOn('node1', 'red')">highlight on</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().highlightOff('node1')">highlight off</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().toggleHighlight('node1', 'red')">toggle highlight</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().show('node1')">show</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().hide('node1')">hide</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().toggleHidden('node1')">toggle hidden</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().panTo('node1')">pan to one node</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().panTo(['node1','node2'])">pan to two nodes</a>
+</p>
+<h1 id="multipleoperations">Multiple operations</h1>
+<p>
+  <a onclick="diagram.manipulator.reset().zoomOn(['node1','node2']).highlightOff('node1')">zoom on two nodes and highlight off</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().highlightOn('node1', 'red').zoomOn('node1')">zoom on and highlight on</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().highlightOn('node1', 'red').show('node1')">show and highlight</a>
+</p>
+<h1 id="shouldntwork">Shouldn't work</h1>
+<p>
+  <a href="show('node1')">no namespace</a>
+</p>
+<p>
+  <a onclick="diagram.manipulator.reset().">use double quotes</a>
+</p>

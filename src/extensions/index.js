@@ -1,11 +1,1 @@
-export { zoomOn } from './zoomOn';
-export { resetPanZoom } from './resetPanZoom';
-export { highlightOn } from './highlightOn';
-export { highlightOff } from './highlightOff';
-export { toggleHighlight } from './toggleHighlight';
-export { resetHighlighted } from './resetHighlighted';
-export { panTo } from './panTo';
-export { hide } from './hide';
-export { show } from './show';
-export { toggleHidden } from './toggleHidden';
-export { resetHidden } from './resetHidden';
+export { interactiveDescriptionLinks } from './interactiveDescriptionLinks';
