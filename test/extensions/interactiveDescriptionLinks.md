@@ -28,6 +28,10 @@ K[zoom on and highlight on](zoomOn('node1') highlightOn('node1', 'red'))
 
 K[show and highlight](show('node1') highlightOn('node1', 'red'))
 
+# Test general
+
+K[pan on one](panTo('node1')) and some text in between K[highlight](highlightOn('node1', 'red')).
+
 # Shouldn't work
 [no namespace](show('node1'))
 

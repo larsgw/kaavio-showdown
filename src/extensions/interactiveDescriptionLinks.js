@@ -1,6 +1,9 @@
 // Captures something like K[some text](action)
 // The 'some text' is the first capturing group and the 'action' is the second
-const mainRe = new RegExp('K\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]\\([ \\t]*(.*)[ \\t]*\\)', 'g');
+// Taken logic for dealing with nested parentheses from
+// http://stackoverflow.com/questions/12584124/how-to-match-nested-function-invocations-bracket-pairs-using-a-regular-express
+const mainRe = new RegExp('K\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]\\' +
+  '([ \\t]*((?:[a-zA-Z_]\\w*[(]|[^()"]*[)][ \\t]*)*)[ \\t]*\\)', 'g');
 
 // Array of all the regexes to peform on the 'action' capturing group of the mainRe
 let actionRegexes = [
@@ -77,10 +80,11 @@ export const interactiveDescriptionLinks = {
         .filter(elem => action.match(elem.regex))
         .map(elem => action.match(elem.regex, results => `${elem.name}(${results[1]})`));
 
-      const fullAction = twoGroups.concat(oneGroup).join('.');
+      const fullAction = twoGroups.concat(oneGroup).reduce((acc, cur) =>
+        `${acc}diagram.manipulator.${cur};`, '');
 
       // Render the full interactive Kaavio link
       // Reset Kaavio before so each link is "self describing"
-      return `<a onclick="diagram.manipulator.reset().${fullAction}">${innerText}</a>`;
+      return `<a onclick="diagram.manipulator.reset();${fullAction}">${innerText}</a>`;
     }),
 };
