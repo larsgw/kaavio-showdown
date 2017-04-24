@@ -1,5 +1,7 @@
 // Captures something like K[some text](action)
 // The 'some text' is the first capturing group and the 'action' is the second
+// Taken logic for dealing with nested parentheses from
+// http://stackoverflow.com/questions/12584124/how-to-match-nested-function-invocations-bracket-pairs-using-a-regular-express
 const mainRe = new RegExp('K\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]\\' +
   '([ \\t]*((?:[a-zA-Z_]\\w*[(]|[^()"]*[)][ \\t]*)*)[ \\t]*\\)', 'g');
 
