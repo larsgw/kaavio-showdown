@@ -39,10 +39,15 @@
 <p>
   <a onclick="diagram.manipulator.reset().highlightOn('node1', 'red').show('node1')">show and highlight</a>
 </p>
+<h1 id="testgeneral">Test general</h1>
+<p>
+  <a onclick="diagram.manipulator.reset().panTo('node1')">pan on one</a> and some text in between
+  <a onclick="diagram.manipulator.reset().highlightOn('node1', 'red')">highlight</a>.
+</p>
 <h1 id="shouldntwork">Shouldn't work</h1>
 <p>
   <a href="show('node1')">no namespace</a>
 </p>
 <p>
-  <a onclick="diagram.manipulator.reset().">use double quotes</a>
+  K<a href="show(" node1 ")">use double quotes</a>
 </p>

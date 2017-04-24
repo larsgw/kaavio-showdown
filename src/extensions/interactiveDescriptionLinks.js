@@ -1,6 +1,7 @@
 // Captures something like K[some text](action)
 // The 'some text' is the first capturing group and the 'action' is the second
-const mainRe = new RegExp('K\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]\\([ \\t]*(.*)[ \\t]*\\)', 'g');
+const mainRe = new RegExp('K\\[((?:\\[[^\\]]*|[^\\[\\]])*)\\]\\' +
+  '([ \\t]*((?:[a-zA-Z_]\\w*[(]|[^()"]*[)][ \\t]*)*)[ \\t]*\\)', 'g');
 
 // Array of all the regexes to peform on the 'action' capturing group of the mainRe
 let actionRegexes = [
