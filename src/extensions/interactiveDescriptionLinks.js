@@ -44,6 +44,10 @@ actionRegexes = actionRegexes.concat([
     regexStr: actionRegexes.find(re => re.name === 'highlightOn')
       .regexStr.replace('highlightOn', 'toggleHighlight'),
   },
+  {
+    name: 'toggleHidden',
+    regexStr: actionRegexes.find(re => re.name === 'hide').regexStr.replace('hide', 'toggleHidden'),
+  },
 ]).map(elem => {
   const name = elem.name;
   return {
@@ -68,7 +72,8 @@ export const interactiveDescriptionLinks = {
       // Now do those with one capture group
       // Returns e.g. [`zoomOn('node1')`,...]
       const oneGroup = actionRegexes
-        .filter(elem => ['zoomOn', 'panTo', 'hide', 'show', 'highlightOff'].indexOf(elem.name) > -1)
+        .filter(elem => ['zoomOn', 'panTo', 'hide', 'show', 'highlightOff', 'toggleHidden']
+          .indexOf(elem.name) > -1)
         .filter(elem => action.match(elem.regex))
         .map(elem => action.match(elem.regex, results => `${elem.name}(${results[1]})`));
 

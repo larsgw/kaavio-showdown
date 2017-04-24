@@ -52,6 +52,7 @@
     "eslint-plugin-react": "^5.0.1",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.4.5",
+    "pretty": "^2.0.0",
     "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.4.0",
     "should": "^11.2.1",
@@ -60,7 +61,7 @@
   "scripts": {
     "lint": "eslint src test tools",
     "test": "mocha --compilers js:babel-register",
-    "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
+    "test:watch": "mocha --compilers js:babel-register --reporter min --watch --watch-extensions .md,.html",
     "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "node tools/build",

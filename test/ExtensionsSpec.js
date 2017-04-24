@@ -4,6 +4,7 @@ import * as Showdown from 'showdown';
 import * as extensions from '../src/extensions';
 import 'should';
 import { normalize } from '../utils/normalize';
+import pretty from 'pretty';
 
 describe('Extensions', () => {
   const cases = fs.readdirSync(`${__dirname}/extensions/`)
@@ -33,8 +34,8 @@ describe('Extensions', () => {
       });
       const output = converter.makeHtml(singleCase.markdown);
       assert.equal(
-        normalize(output),
-        normalize(singleCase.HTML));
+        pretty(normalize(output)),
+        pretty(normalize(singleCase.HTML)));
     });
   });
 });
