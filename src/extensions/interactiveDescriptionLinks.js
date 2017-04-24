@@ -62,16 +62,16 @@ export const interactiveDescriptionLinks = {
       const twoGroups = actionRegexes
         .filter(elem => ['toggleHighlight', 'highlightOn'].indexOf(elem.name) > -1)
         .filter(elem => action.match(elem.regex))
-        .map(elem => action.replace(elem.regex, (match, p1, p2) => `${elem.name}(${p1},${p2})`));
+        .map(elem => action.match(elem.regex, results =>
+          `${elem.name}(${results[1]},${results[2]})`));
 
       // Now do those with one capture group
       // Returns e.g. [`zoomOn('node1')`,...]
       const oneGroup = actionRegexes
         .filter(elem => ['zoomOn', 'panTo', 'hide', 'show', 'highlightOff'].indexOf(elem.name) > -1)
         .filter(elem => action.match(elem.regex))
-        .map(elem => action.replace(elem.regex, (match, p1) => `${elem.name}(${p1})`));
+        .map(elem => action.match(elem.regex, results => `${elem.name}(${results[1]})`));
 
-      // Gives e.g. `toggleHighlight('node1','red').zoomOn('node')`
       const fullAction = twoGroups.concat(oneGroup).join('.');
 
       // Render the full interactive Kaavio link
